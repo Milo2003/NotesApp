@@ -51,3 +51,16 @@ body {
   list-style: none;
   padding: 0;
 }
+
+/* Smartphone styles */
+@media (max-width: 767px) {
+  #footer-content {
+    display: none;
+  }
+}
+
+@media (max-height: 600px) {
+  #footer-content {
+    display: none;
+  }
+}
