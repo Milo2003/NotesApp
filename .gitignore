@@ -182,8 +182,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/node,windows,linux
-
 package.json
 package-lock.json
 
