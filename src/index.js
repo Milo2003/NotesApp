@@ -8,11 +8,13 @@ const passport = require("passport");
 
 // Initiation
 const app = express();
+const PORT = process.env.PORT;
 require("./db"); // Importación del archivo de conexión a MongoDB
 require("./config/passport"); // Configuración de passport para autenticación
 
 // Settings
-app.set("port", process.env.PORT || 3000); // Puerto de escucha del servidor
+
+app.set("port", PORT || 3000); // Puerto de escucha del servidor
 app.set("views", path.join(__dirname, "views")); // Carpeta de las vistas de la app
 app.engine(
   ".hbs",
@@ -61,6 +63,6 @@ app.use(require("./routes/users")); // Rutas de los usuarios
 app.use(express.static(path.join(__dirname, "public"))); // Archivos estáticos de la app
 
 // Server is listening
-app.listen(app.get("port"), () => {
+app.listen(PORT, () => {
   console.log("Server on port", app.get("port"));
 });
