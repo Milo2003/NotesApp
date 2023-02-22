@@ -8,10 +8,10 @@ const passport = require("passport");
 
 // Initiation
 const app = express();
-const PORT = process.env.PORT;
 require("./db"); // Importación del archivo de conexión a MongoDB
 require("./config/passport"); // Configuración de passport para autenticación
-
+require('dotenv').config();
+const PORT = process.env.PORT;
 // Settings
 
 app.set("port", PORT || 3000); // Puerto de escucha del servidor
@@ -64,5 +64,5 @@ app.use(express.static(path.join(__dirname, "public"))); // Archivos estáticos 
 
 // Server is listening
 app.listen(PORT, () => {
-  console.log("Server on port", app.get("port"));
+  console.log(`Server on port ${PORT}`);
 });
